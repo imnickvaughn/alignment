@@ -24,18 +24,12 @@ export default function Home() {
         {favIconDisplay()}
       </Head>
 
-      <HeaderComponent test="hello from parent" />
+      <HeaderComponent />
 
 
 
 
-      <footer className={styles.footer}>
 
-        <a href="https://www.linkedin.com/in/imnickvaughn/" target="_blank" rel="noopener noreferrer">
-          Powered by{' '}
-      L<img src="/faviconLightBrowser.svg" alt="Letter O" className={styles.logo} />VE
-      </a>
-      </footer>
     </div>
   )
 }
