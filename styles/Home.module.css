@@ -1,16 +1,6 @@
     /*
 !CONTAINER
 */
-    
-    .container {
-        position: relative;
-        min-height: 100vh;
-        padding: 0 0.5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
     /*
 !end CONTAINER
 */
@@ -19,16 +9,19 @@
 */
     
     .backgroundImage1440 {
-        position: relative;
+        position: absolute;
         width: 100vw;
         height: 35vw;
+        pointer-events: none;
         /* keeps the aspect ratio*/
+        overflow: visible;
     }
     
     .backgroundImage {
-        position: relative;
+        position: absolute;
         width: 100vw;
         height: 50vw;
+        pointer-events: none;
         /* keeps the aspect ratio*/
     }
     /*

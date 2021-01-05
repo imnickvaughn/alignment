@@ -14,3 +14,22 @@ a {
 * {
     box-sizing: border-box;
 }
+
+.content-container {
+    padding: 11rem 3rem 3rem 3rem;
+}
+
+.container {
+    position: relative;
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    width: 1rem;
+    height: 1rem;
+}

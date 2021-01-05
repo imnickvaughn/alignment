@@ -1,5 +1,7 @@
-import styles from '../styles/Home.module.css'
+// @ts-ignore
+import styles from '../styles/home.module.css'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import React from 'react';
 
 
 export default function HeaderComponent() {

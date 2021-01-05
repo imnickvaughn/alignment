@@ -1,7 +1,9 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import HeaderComponent from './header.component.js'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import FormComponent from './form.component.js';
+import Link from 'next/link';
+import React from 'react';
 
 
 export default function Home() {
@@ -18,13 +20,19 @@ export default function Home() {
 
 
   return (
-    <div className="styles.container">
+    <div>
       <Head>
         <title>Molecular Alignment</title>
         {favIconDisplay()}
       </Head>
 
       <HeaderComponent />
+      <div className="content-container">
+        <FormComponent />
+        <Link href='/seq-list'><img className="icon" src="chevronRight0.svg" alt="Navigate to Seq List Page" /></Link>
+
+
+      </div>
 
 
 
