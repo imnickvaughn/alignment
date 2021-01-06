@@ -1,41 +1,49 @@
 // @ts-ignore
-import styles from '../styles/home.module.css'
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import styles from '../styles/Home.module.css'
 import React from 'react';
+import styled from 'styled-components';
 
 
 export default function HeaderComponent() {
+    let Clip;
+    let width;
 
-    const matches1440 = useMediaQuery('(min-width:1440px)');
-    const matches1024 = useMediaQuery('(min-width:1024px)');
-    const matches768 = useMediaQuery('(min-width:768px)');
 
-    const displayHeader = () => {
-        if (matches1440) {
-            return <img className={styles.backgroundImage1440} src="header1440.svg#svgView(viewBox(0, 0, 1440, 479))" alt="Header Image" />
-        }
-        else if (matches1024) {
-            return <img className={styles.backgroundImage} src="header1024.svg#svgView(viewBox(0, 0, 1024, 479))" alt="Header Image" />
-        }
-        else if (matches768) {
-            return <img className={styles.backgroundImage} src="header768.svg#svgView(viewBox(0, 10, 765, 338))" alt="Header Image" />
-        }
-        else {
-            return <img className={styles.backgroundImage} src="header414.svg#svgView(viewBox(2, 10, 410,220))" alt="Header Image" />
-        }
+
+    if (typeof window !== "undefined") {
+        width = window.innerWidth;
+
+        //         // Here we create a component that will rotate everything we pass in over two seconds
+        //         Clip = styled.div`
+        //         position: absolute;
+        //         pointer-events: none;
+        //         width: 1622px;
+        //         height: 270px;
+        //         top: 0rem;
+        //         left: 0rem;
+        //         z-index: -3;
+        //         clip-path: inset(0px ${1622 - width}px 0px 0px);
+        // `;
     }
 
 
     return (
         <div>
-            <div >
-                {displayHeader()}
+            <div>
+                {/* <img className={styles.headerFore} src="headerFore0.svg#svgView(viewBox(1, 0, 2560, 1441))" alt="Header Foreground Image" />
+                <img className={styles.headerLeft} src="headerLeft0.svg#svgView(viewBox(0, 0, 184, 172))" alt="Header Left Image" />
+                <img className={styles.headerRight} src="headerRight0.svg#svgView(viewBox(0, 0, 485, 407))" alt="Header Right Image" />
+                <img className={styles.headerBack} src="headerBack0.svg#svgView(viewBox(1, 0, 2560, 1441))" alt="Header Background Image" /> */}
             </div>
             <div>
-
+                {/* <Clip> */}
+                <img className={styles.listheaderBack} src="listheaderBack0.svg#svgView(viewBox(0 , 0, 2561, 360))" alt="Header Background Image" />
+                {/* </Clip> */}
+                <img className={styles.listheaderRight} src="listheaderRight0.svg#svgView(viewBox(0, 0, 342, 135))" alt="Header Right Image" />
             </div>
-            <span>{`(min-width:1024px) matches: ${matches1024}`}</span>
-            <span>{`(min-width:768px) matches: ${matches768}`}</span>
+            <div className={styles.headerPadding}></div>
+            {/* <div>{viewport()}</div> */}
+            <div>{width}</div>
         </div>
     )
 }

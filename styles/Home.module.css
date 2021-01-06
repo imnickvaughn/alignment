@@ -8,21 +8,68 @@
 !HEADER COMPONENT
 */
     
-    .backgroundImage1440 {
+    .headerFore {
         position: absolute;
-        width: 100vw;
-        height: 35vw;
         pointer-events: none;
-        /* keeps the aspect ratio*/
-        overflow: visible;
+        width: 100vw;
+        height: 100vh;
+        top: 0rem;
+        left: 0rem;
+        z-index: -1;
     }
     
-    .backgroundImage {
+    .headerLeft {
+        left: -2rem;
+        top: 0rem;
         position: absolute;
-        width: 100vw;
-        height: 50vw;
         pointer-events: none;
-        /* keeps the aspect ratio*/
+        width: 13rem;
+        height: 13rem;
+        z-index: -2;
+    }
+    
+    .headerRight {
+        right: 0rem;
+        top: 0rem;
+        position: absolute;
+        pointer-events: none;
+        width: calc(16vw + 6rem);
+        height: calc(16vw + 6rem);
+        z-index: -2;
+    }
+    
+    .headerBack {
+        position: absolute;
+        pointer-events: none;
+        width: 100vw;
+        height: 100vh;
+        top: 0rem;
+        left: 0rem;
+        z-index: -3;
+    }
+    
+    .listheaderRight {
+        position: absolute;
+        pointer-events: none;
+        width: 15rem;
+        height: 6rem;
+        top: 0rem;
+        left: 0rem;
+        z-index: -2;
+    }
+    
+    .listheaderBack {
+        position: absolute;
+        pointer-events: none;
+        width: 1622px;
+        height: 270px;
+        top: 0rem;
+        left: 0rem;
+        z-index: -3;
+    }
+    
+    .headerPadding {
+        padding: 10vh 0 0 0;
     }
     /*
 !end HEADER COMPONENT

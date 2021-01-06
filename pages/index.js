@@ -5,7 +5,6 @@ import FormComponent from './form.component.js';
 import Link from 'next/link';
 import React from 'react';
 
-
 export default function Home() {
   const matchesMediaDark = useMediaQuery('(prefers-color-scheme: dark)');
 
@@ -20,24 +19,18 @@ export default function Home() {
 
 
   return (
-    <div>
+    <div >
       <Head>
         <title>Molecular Alignment</title>
         {favIconDisplay()}
       </Head>
-
-      <HeaderComponent />
-      <div className="content-container">
-        <FormComponent />
-        <Link href='/seq-list'><img className="icon" src="chevronRight0.svg" alt="Navigate to Seq List Page" /></Link>
-
-
+      <div>
+        <HeaderComponent />
+        <div className="content-container">
+          <FormComponent />
+          <Link href='/seq-list'><img className="icon" src="chevronRight0.svg" alt="Navigate to Seq List Page" /></Link>
+        </div>
       </div>
-
-
-
-
-
     </div>
   )
 }
