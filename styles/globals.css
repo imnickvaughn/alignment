@@ -16,6 +16,10 @@ a {
     box-sizing: border-box;
 }
 
+form>* {
+    margin: 5px !important;
+}
+
 .columnContainer {
     flex-wrap: wrap;
     display: flex;

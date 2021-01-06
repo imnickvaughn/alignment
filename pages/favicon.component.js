@@ -1,5 +1,6 @@
 import { useMediaQuery } from "@material-ui/core";
 import { loadGetInitialProps } from "next/dist/next-server/lib/utils";
+import Head from "next/head";
 import React from "react";
 
 export default function FaviconComponent(props) {
@@ -15,11 +16,9 @@ export default function FaviconComponent(props) {
     }
 
     return (
-
-
-        <div>
+        <Head>
             <title>{props.title}</title>
             {favIconDisplay()}
-        </div>
+        </Head>
     )
 }

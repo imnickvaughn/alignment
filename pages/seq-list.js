@@ -1,5 +1,3 @@
-
-import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 import styles from '../styles/home.module.css'
@@ -9,13 +7,11 @@ import { Button, FormControl, TextField } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 import axios from "axios"
 
-
-
 export default function SeqListPage() {
 
     const title = "Sequence Editor";
 
-    const { register, control, handleSubmit } = useForm();
+    const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
         console.log(data)
@@ -30,12 +26,8 @@ export default function SeqListPage() {
 
     return (
         <>
-            <Head>
-                <FaviconComponent title={title}></FaviconComponent>
-            </Head>
-
+            <FaviconComponent title={title}></FaviconComponent>
             <HeaderComponent></HeaderComponent>
-
 
             <div className="row">
                 <Link href='/'><img className="icon" src="chevronLeft0.svg" alt="Navigate to Seq List Page" /></Link>
@@ -74,9 +66,6 @@ export default function SeqListPage() {
                     </FormControl>
                 </div>
             </div>
-
         </>
-
-
     )
 }
