@@ -1,5 +1,5 @@
 // @ts-ignore
-import styles from '../styles/Home.module.css'
+import styles from '../styles/header.module.css'
 import React from 'react';
 import { useRouter } from 'next/router'
 
@@ -23,8 +23,9 @@ export default function HeaderComponent() {
         else {
             return (
                 <div>
-                    <img className={styles.listheaderBack} src="listheaderBack0.svg#svgView(viewBox(0 , 0, 2561, 360))" alt="Header Background Image" />
-                    <img className={styles.listheaderRight} src="listheaderRight0.svg#svgView(viewBox(0, 0, 342, 135))" alt="Header Right Image" />
+                    <img className={styles.listheaderFore} src="listheaderFore0.svg#svgView(viewBox(0, 0, 2561, 1411))" alt="Header Foreground Image" />
+                    <img className={styles.listheaderRight} src="listheaderRight0.svg#svgView(viewBox(0, 0, 370, 290))" alt="Header Right Image" />
+                    <img className={styles.listheaderBack} src="listheaderBack0.svg#svgView(viewBox(0, 0, 2561, 1442))" alt="Header Background Image" />
                 </div>
             )
         }

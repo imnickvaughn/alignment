@@ -1,0 +1,78 @@
+.headerFore {
+    position: absolute;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    top: 0rem;
+    left: 0rem;
+    z-index: -1;
+}
+
+.headerLeft {
+    left: -2rem;
+    top: 0rem;
+    position: absolute;
+    pointer-events: none;
+    width: 200px;
+    height: 180px;
+    z-index: -2;
+}
+
+.headerRight {
+    right: 0rem;
+    top: 0rem;
+    position: absolute;
+    pointer-events: none;
+    width: calc(16vw + 6rem);
+    height: calc(16vw + 6rem);
+    z-index: -2;
+}
+
+.headerBack {
+    position: absolute;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    top: 0rem;
+    left: 0rem;
+    z-index: -3;
+}
+
+.listheaderFore {
+    position: absolute;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    top: 4rem;
+    left: 0rem;
+    z-index: -1;
+}
+
+.listheaderRight {
+    position: absolute;
+    pointer-events: none;
+    width: calc(7vw + 21rem);
+    height: calc(7vw + 15rem);
+    top: 0rem;
+    left: 0rem;
+    z-index: -2;
+}
+
+.listheaderBack {
+    position: absolute;
+    pointer-events: none;
+    width: 100vw;
+    height: 100vh;
+    top: -15rem;
+    left: 0rem;
+    z-index: -3;
+}
+
+.headerPadding {
+    padding: 10vh 0 0 0;
+}
+
+
+/*
+!end HEADER COMPONENT
+*/
