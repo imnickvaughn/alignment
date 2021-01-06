@@ -23,8 +23,8 @@
         top: 0rem;
         position: absolute;
         pointer-events: none;
-        width: 13rem;
-        height: 13rem;
+        width: 200px;
+        height: 180px;
         z-index: -2;
     }
     
