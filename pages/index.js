@@ -6,7 +6,7 @@ import Link from 'next/link';
 import React from 'react';
 import FaviconComponent from './favicon.component.js';
 import ResultsComponent from './results.component.js';
-import styles from '../styles/home.module.css'
+import styles from '../styles/root.module.css'
 
 export default function Home() {
   const title = "Molecular Alignment Tool"
