@@ -31,7 +31,9 @@ export default function FormComponent() {
 
     return (
         <>
+
             <form onSubmit={handleSubmit(onSubmit)} className="columnContainer">
+                <h1>UNGAPPED BLAST</h1>
                 <TextField
                     inputRef={register}
                     name="querySeq"

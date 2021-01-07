@@ -10,7 +10,6 @@ import axios from "axios"
 export default function SeqListPage() {
 
     const title = "Sequence Editor";
-    const description = "Add DNA Sequences to the database.";
 
 
     const { register, handleSubmit } = useForm();
@@ -30,49 +29,48 @@ export default function SeqListPage() {
         <>
             <FaviconComponent title={title}></FaviconComponent>
             <HeaderComponent></HeaderComponent>
-            <div className="pageDescription center">{description}</div>
             <div className="pageContainer">
                 <Link href='/'><img className="pageRoute" src="chevronLeft0.svg" alt="Navigate to Seq List Page" /></Link>
-                <div className="pageContainer">
-                    <div className="pageContent">
-                        <form onSubmit={handleSubmit(onSubmit)} className="columnContainer">
-                            <TextField
-                                inputRef={register}
-                                name="name"
-                                id="name"
-                                label="Name"
-                                defaultValue=""
-                                className="max-width"
-                            />
-                            <TextField
-                                inputRef={register}
-                                name="ref"
-                                id="ref"
-                                label="Reference Name"
-                                defaultValue=""
-                                className="max-width"
-                            />
-                            <TextField
-                                inputRef={register}
-                                name="seq"
-                                id="seq"
-                                label="Sequence"
-                                multiline
-                                rows={8}
-                                defaultValue=""
-                                className="max-width"
-                            />
+                <div className="pageContent">
+                    <form onSubmit={handleSubmit(onSubmit)} className="columnContainer">
+                        <h1>ADD SEQUENCES TO DATABASE</h1>
 
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                type="submit"
-                                className="max-width"
-                            >
-                                Add Sequence
+                        <TextField
+                            inputRef={register}
+                            name="name"
+                            id="name"
+                            label="Name"
+                            defaultValue=""
+                            className="max-width"
+                        />
+                        <TextField
+                            inputRef={register}
+                            name="ref"
+                            id="ref"
+                            label="Reference Name"
+                            defaultValue=""
+                            className="max-width"
+                        />
+                        <TextField
+                            inputRef={register}
+                            name="seq"
+                            id="seq"
+                            label="Sequence"
+                            multiline
+                            rows={8}
+                            defaultValue=""
+                            className="max-width"
+                        />
+
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            type="submit"
+                            className="max-width"
+                        >
+                            Add Sequence
                         </Button>
-                        </form>
-                    </div>
+                    </form>
                 </div>
                 <Link href='/'><img className="pageRoute" src="chevronRight0.svg" alt="Navigate to Seq List Page" /></Link>
             </div>

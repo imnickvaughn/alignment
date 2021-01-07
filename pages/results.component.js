@@ -120,14 +120,20 @@ export default function ResultsComponent() {
 
     const isLoading = (seq, index) => {
         if (seq.status === 1) {
-            return <CircularProgress />
+            return <>
+                <div className={`${styles.lessEmphasis} ${styles.loadingResults}`}><span>List Number: </span>#{index + 1}</div>
+                <div className={`${styles.lessEmphasis} ${styles.loadingResults}`}><span>Id Number: </span>#{seq.id}</div>
+                <div className={`${styles.lessEmphasis} ${styles.loadingResults}`}><span>Name: </span>{seq.name}</div>
+                <CircularProgress className={styles.loader} />
+            </>
         }
         else {
             return <>
-                <div><p className={styles.lessEmphasis}>Result Number: </p>#{index + 1}</div>
-                <div><p className={styles.lessEmphasis}>Reference: </p>{seq.ref}</div>
-                <div><p className={styles.lessEmphasis}>Name: </p>{seq.name}</div>
-                <div><p className={styles.lessEmphasis}>Sequence: </p>{seq.seq}</div>
+                <div><span className={styles.lessEmphasis}>List Number: </span>#{index + 1}</div>
+                <div><span className={styles.lessEmphasis}>Id Number: </span>#{seq.id}</div>
+                <div><span className={styles.lessEmphasis}>Reference: </span>{seq.ref}</div>
+                <div><span className={styles.lessEmphasis}>Name: </span>{seq.name}</div>
+                <div><span className={styles.lessEmphasis}>Sequence: </span>{seq.seq}</div>
             </>
         }
     }
@@ -136,7 +142,6 @@ export default function ResultsComponent() {
         <>
             <div className="columnContainer">
                 <h1> BLAST REPORT</h1>
-
                 {Object.values(dummySeqData).map((seq, index) => (
                     <React.Fragment key={index} >
                         <Paper elevation={3} className={styles.result}>
