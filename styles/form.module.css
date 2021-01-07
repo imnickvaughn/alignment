@@ -1,6 +1,4 @@
-.formContainer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin: 5rem;
+#button {
+    background-color: var(--blue);
+    width: -webkit-fill-available;
 }

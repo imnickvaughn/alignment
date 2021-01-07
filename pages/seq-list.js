@@ -3,13 +3,15 @@ import React from "react";
 import styles from '../styles/home.module.css'
 import FaviconComponent from "./favicon.component";
 import HeaderComponent from "./header.component";
-import { Button, FormControl, TextField } from "@material-ui/core";
+import { Button, TextField } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 import axios from "axios"
 
 export default function SeqListPage() {
 
     const title = "Sequence Editor";
+    const description = "Add DNA Sequences to the database.";
+
 
     const { register, handleSubmit } = useForm();
 
@@ -28,12 +30,11 @@ export default function SeqListPage() {
         <>
             <FaviconComponent title={title}></FaviconComponent>
             <HeaderComponent></HeaderComponent>
-
-            <div className="row">
-                <Link href='/'><img className="icon" src="chevronLeft0.svg" alt="Navigate to Seq List Page" /></Link>
-
-                <div className={styles.formContainer}>
-                    <FormControl component="fieldset">
+            <div className="pageDescription center">{description}</div>
+            <div className="pageContainer">
+                <Link href='/'><img className="pageRoute" src="chevronLeft0.svg" alt="Navigate to Seq List Page" /></Link>
+                <div className="pageContainer">
+                    <div className="pageContent">
                         <form onSubmit={handleSubmit(onSubmit)} className="columnContainer">
                             <TextField
                                 inputRef={register}
@@ -41,6 +42,7 @@ export default function SeqListPage() {
                                 id="name"
                                 label="Name"
                                 defaultValue=""
+                                className="max-width"
                             />
                             <TextField
                                 inputRef={register}
@@ -48,6 +50,7 @@ export default function SeqListPage() {
                                 id="ref"
                                 label="Reference Name"
                                 defaultValue=""
+                                className="max-width"
                             />
                             <TextField
                                 inputRef={register}
@@ -55,16 +58,23 @@ export default function SeqListPage() {
                                 id="seq"
                                 label="Sequence"
                                 multiline
-                                rows={4}
+                                rows={8}
                                 defaultValue=""
+                                className="max-width"
                             />
 
-                            <Button variant="contained" color="primary" type="submit">
-                                Primary
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                type="submit"
+                                className="max-width"
+                            >
+                                Add Sequence
                         </Button>
                         </form>
-                    </FormControl>
+                    </div>
                 </div>
+                <Link href='/'><img className="pageRoute" src="chevronRight0.svg" alt="Navigate to Seq List Page" /></Link>
             </div>
         </>
     )

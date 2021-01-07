@@ -31,32 +31,34 @@ export default function FormComponent() {
 
     return (
         <>
-            <div className={styles.formContainer}>
-                <FormControl component="fieldset">
-                    <form onSubmit={handleSubmit(onSubmit)} className="columnContainer">
-                        <TextField
-                            inputRef={register}
-                            name="querySeq"
-                            id="multiline-query-seq"
-                            label="Query Sequence"
-                            multiline
-                            rows={4}
-                            defaultValue=""
-                        />
-                        <TextField
-                            inputRef={register}
-                            name="queryName"
-                            id="query-seq-name"
-                            label="Query Name"
-                            defaultValue=""
-                        />
-                        <Button variant="contained" color="primary" type="submit">
-                            Primary
+            <form onSubmit={handleSubmit(onSubmit)} className="columnContainer">
+                <TextField
+                    inputRef={register}
+                    name="querySeq"
+                    id="multiline-query-seq"
+                    label="Query Sequence"
+                    multiline
+                    rows={11}
+                    defaultValue=""
+                    className="max-width"
+                />
+                <TextField
+                    inputRef={register}
+                    name="queryName"
+                    id="query-seq-name"
+                    label="Query Name"
+                    defaultValue=""
+                    className="max-width"
+                />
+                <Button
+                    variant="contained"
+                    color="primary"
+                    type="submit"
+                    id={styles.button}
+                >
+                    Align Sequence
                         </Button>
-                    </form>
-                </FormControl>
-            </div>
-
+            </form>
         </>
     )
 

@@ -42,8 +42,8 @@
     position: absolute;
     pointer-events: none;
     width: 100vw;
-    height: 100vh;
-    top: 4rem;
+    height: 96vh;
+    top: 2rem;
     left: 0rem;
     z-index: -1;
 }
@@ -51,8 +51,8 @@
 .listheaderRight {
     position: absolute;
     pointer-events: none;
-    width: calc(7vw + 21rem);
-    height: calc(7vw + 15rem);
+    width: calc(7vw + 15rem);
+    height: calc(7vw + 10rem);
     top: 0rem;
     left: 0rem;
     z-index: -2;
@@ -69,10 +69,5 @@
 }
 
 .headerPadding {
-    padding: 10vh 0 0 0;
+    padding: 6rem 0 0 0;
 }
-
-
-/*
-!end HEADER COMPONENT
-*/

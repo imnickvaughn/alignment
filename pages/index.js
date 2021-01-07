@@ -8,18 +8,20 @@ import HeaderComponent from './header.component.js';
 
 export default function Home() {
   const title = "Molecular Alignment Tool"
+  const description = "This is an ungapped local dna sequence alignment."
 
   return (
     <>
       <FaviconComponent title={title} />
       <HeaderComponent />
-      <h4 className={styles.homeDescription}>This is an ungapped local dna sequence alignment.</h4>
-      <div className="row">
-        <div className="rowContainer">
+      <div className="pageDescription center">{description}</div>
+      <div className="pageContainer">
+        <Link href='/seq-list'><img className="pageRoute" src="chevronLeft0.svg" alt="Navigate to Seq List Page" /></Link>
+        <div className="pageContent">
           <FormComponent />
           <ResultsComponent />
         </div>
-        <Link href='/seq-list'><img className={styles.homeNextPageButton} src="chevronRight0.svg" alt="Navigate to Seq List Page" /></Link>
+        <Link href='/seq-list'><img className="pageRoute" src="chevronRight0.svg" alt="Navigate to Seq List Page" /></Link>
       </div>
     </>
   )

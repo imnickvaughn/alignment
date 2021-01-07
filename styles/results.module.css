@@ -1,6 +1,18 @@
 .resultsContainer {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin: 5rem;
+}
+
+.result {
+    width: -webkit-fill-available;
+    margin: 1rem 0 1rem 0;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.lessEmphasis {
+    font-size: 0.9;
+    font-weight: lighter;
 }
