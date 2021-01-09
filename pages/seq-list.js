@@ -16,10 +16,10 @@ export default function SeqListPage() {
 
     const onSubmit = (data) => {
         console.log(data)
-        axios.post("http://18.222.204.26/dnalookupapp/filter", {
-            code: data.querySeq,
-            queryName: data.queryName,
-            maxTargetSeq: data.maxTargetSeq
+        axios.post("http://18.222.204.26/dnalookupapp/sequence/create", {
+            seq: data.seq,
+            name: data.name,
+            ref: data.ref
         }).then(response => {
             console.log(response.data)
         })
