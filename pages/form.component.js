@@ -1,6 +1,6 @@
 import styles from '../styles/form.module.css'
-import React, { useState } from "react";
-import { Button, FormControl, TextField } from "@material-ui/core";
+import React from "react";
+import { Button, TextField } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 import axios from "axios"
 import { v4 as uuidv4 } from 'uuid'
@@ -15,11 +15,10 @@ export default function FormComponent(props) {
         let query = {
             id: uid,
             queryName: data.queryName,
-            querySeq: data.querySeq,
+            querySeq: data.querySeq.toUpperCase(),
             status: 1
         }
         props.addMatches([query])
-
         // http://127.0.0.1:8000
         // http://18.222.204.26
         axios.post("http://18.222.204.26/dnalookupapp/filter", {
@@ -51,14 +50,6 @@ export default function FormComponent(props) {
             props.addMatches(response.data.data)
         })
     };
-
-    const dummyRefInput = [
-        {
-            "id": 1,
-            "queryName": "First Seq Query",
-            "querySeq": "ATGACTGACTGCTGACTGACTTAGCTAGTCGTAGCTTATCGTAGTCAGTCAGTA",
-        },
-    ]
 
     return (
         <>

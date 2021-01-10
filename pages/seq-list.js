@@ -6,20 +6,27 @@ import HeaderComponent from "./header.component";
 import { Button, TextField } from "@material-ui/core";
 import { useForm } from "react-hook-form";
 import axios from "axios"
+import sanitizeHtml from "sanitize-html";
 
 export default function SeqListPage() {
 
     const title = "Sequence Editor";
 
+    const matchesNonAtcg = new RegExp("/[^ACTGactg]/");
 
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
-        console.log(data)
+        const newData = {
+            seq: sanitizeHtml(data.seq.toUpperCase()),
+            name: sanitizeHtml(data.name),
+            ref: sanitizeHtml(data.ref),
+        }
+
         axios.post("http://18.222.204.26/dnalookupapp/sequence/create", {
-            seq: data.seq,
-            name: data.name,
-            ref: data.ref
+            seq: newData.seq,
+            name: newData.name,
+            ref: newData.ref
         }).then(response => {
             console.log(response.data)
         })

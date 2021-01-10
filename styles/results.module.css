@@ -28,3 +28,12 @@
     top: 25%;
     left: 46%;
 }
+
+.querySeqHighlight {
+    background-color: var(--blue);
+    display: inline-flex;
+    border-radius: 14px;
+    color: #fff;
+    padding: 0px 5px 2px 5px;
+    align-items: center;
+}
