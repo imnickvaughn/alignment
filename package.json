@@ -5,12 +5,9 @@
     "scripts": {
         "devClient": "next dev",
         "devServer": "cd server && python manage.py runserver",
-        "dev": "devServer && devClient",
+        "dev": "concurrently 'yarn devServer'  'yarn devClient'",
         "build": "next build",
-        "start": "next start",
-        "predeploy": "npm run build",
-        "export": "next export",
-        "deploy": "next build && next export && touch out/.nojekyll"
+        "start": "next start"
     },
     "dependencies": {
         "@material-ui/core": "^4.11.2",
@@ -30,6 +27,5 @@
         "eslint": "^7.17.0",
         "eslint-plugin-react": "^7.22.0",
         "touch": "^3.1.0"
-    },
-    "homepage": "http://nextsapien.com"
+    }
 }

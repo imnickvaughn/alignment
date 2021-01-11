@@ -13,10 +13,14 @@ export default function Home(props) {
   // This is what provides the user with past searches and results
   const [matches, setMatches] = useState(() => {
     try {
-      // We get matches from local storage by its key...
-      const item = window.localStorage.getItem("matches");
-      // ...then we parse stored json or if none are returned give an empty array.
-      return item ? JSON.parse(item) : [];
+      // We get matches from local storage by its key...'
+      if (typeof window !== 'undefined') {
+        const item = localStorage.getItem("matches");
+        // ...then we parse stored json or if none are returned give an empty array.
+        return item ? JSON.parse(item) : [];
+      } else {
+        return [];
+      }
     }
     catch (error) {
       console.log(error);
@@ -36,7 +40,9 @@ export default function Home(props) {
         matches.push(current[i])
       }
     }
-    localStorage.setItem("matches", JSON.stringify(matches))
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("matches", JSON.stringify(matches))
+    }
     setMatches(matches.concat())
   }
 
@@ -52,7 +58,9 @@ export default function Home(props) {
       matches.push(copy[i])
     }
     matches.unshift(data[0])
-    localStorage.setItem("matches", JSON.stringify(matches))
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("matches", JSON.stringify(matches))
+    }
     setMatches(matches.concat())
   }
 
