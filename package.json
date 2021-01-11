@@ -5,7 +5,7 @@
     "scripts": {
         "devClient": "next dev",
         "devServer": "cd server && python manage.py runserver",
-        "dev": "concurrently 'yarn devServer'  'yarn devClient'",
+        "dev": "concurrently 'npm run devServer'  'npm run devClient'",
         "build": "next build",
         "start": "next start"
     },
