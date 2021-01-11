@@ -22,7 +22,7 @@ export default function SeqListPage() {
         }
 
         // axios.post("http://127.0.0.1:8000/dnalookupapp/sequence/create", {
-        axios.post("https://18.222.204.26/dnalookupapp/sequence/create", {
+        axios.post("https://alignment-server.herokuapp.com/dnalookupapp/sequence/create", {
             seq: newData.seq,
             name: newData.name,
             ref: newData.ref

@@ -27,25 +27,31 @@ export default function FormComponent(props) {
         }
         props.addMatches([query])
         // axios.post("http://127.0.0.1:8000/dnalookupapp/filter", {
-        axios.post("https://18.222.204.26/dnalookupapp/filter", {
+        axios.post("https://alignment-server.herokuapp.com/dnalookupapp/filter", {
             id: uid,
             code: query.querySeq,
             queryName: query.queryName
         }).then(response => {
             if (response.data.found) {
                 response.data.data.forEach((item, index) => {
-                    let seqIndex = item.index
-                    let seq = item.seq.substring(seqIndex - 20, seqIndex + query.querySeq.length + 20)
-                    let a = seq.substring(0, 20)
-                    let b = seq.substring(20 + query.querySeq.length)
-
-                    item.seqIndex = item.index
-                    item.seq = seq
+                    let needle = item.index
+                    console.log(item.index)
+                    let seq = item.seq.substring(needle - 20, needle + query.querySeq.length + 20)
                     item.status = 0
                     item.queryName = query.queryName
                     item.querySeq = query.querySeq
+
+                    let a = item.seq.substring(needle - 20, needle)
+                    let b = item.seq.substring(needle + query.querySeq.length, needle + 20 + query.querySeq.length)
+
+                    item.seq = seq
+
+                    console.log(seq)
+                    console.log(a)
+                    console.log(b)
+
                     item.seqLeft = a
-                    item.seqKey = query.querySeq
+                    item.seqKey = query.querySeq.toUpperCase()
                     item.seqRight = b
                 });
                 props.removeMatches(response.data.data[0].id)
