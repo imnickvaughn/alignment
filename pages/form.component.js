@@ -7,47 +7,59 @@ import { v4 as uuidv4 } from 'uuid'
 
 
 export default function FormComponent(props) {
-
+    let query = {};
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
         let uid = uuidv4()
-        let query = {
+        query = {
             id: uid,
             queryName: data.queryName,
             querySeq: data.querySeq.toUpperCase(),
             status: 1
         }
         props.addMatches([query])
-        // http://127.0.0.1:8000
-        // http://18.222.204.26
+        // axios.post("http://127.0.0.1:8000/dnalookupapp/filter", {
         axios.post("http://18.222.204.26/dnalookupapp/filter", {
             id: uid,
-            code: data.querySeq,
-            queryName: data.queryName
+            code: query.querySeq,
+            queryName: query.queryName
         }).then(response => {
-            response.data.data.forEach((item, index) => {
-                let needle = item.index
-                let seq = item.seq.substring(needle - 20, needle + query.querySeq.length + 20)
-                item.seq = seq
-                item.status = 0
-                item.queryName = query.queryName
-                item.querySeq = query.querySeq
+            if (response.data.found) {
+                response.data.data.forEach((item, index) => {
+                    let seqIndex = item.index
+                    let seq = item.seq.substring(seqIndex - 20, seqIndex + query.querySeq.length + 20)
+                    let a = seq.substring(0, 20)
+                    let b = seq.substring(20 + query.querySeq.length)
 
-                let a = seq.substring(0, 20)
-                let b = seq.substring(20 + query.querySeq.length)
+                    item.seqIndex = item.index
+                    item.seq = seq
+                    item.status = 0
+                    item.queryName = query.queryName
+                    item.querySeq = query.querySeq
+                    item.seqLeft = a
+                    item.seqKey = query.querySeq
+                    item.seqRight = b
+                });
+                props.removeMatches(response.data.data[0].id)
+                props.addMatches(response.data.data)
+            }
+            else {
+                let obj = {
+                    "index": "NOT FOUND",
+                    "queryName": query.queryName,
+                    "querySeq": query.querySeq,
+                    "seqIndex": '',
+                    "seq": '',
+                    "seqLeft": '',
+                    "seqKey": '',
+                    "seqRight": '',
+                    "status": 0
 
-                console.log(seq)
-                console.log(a)
-                console.log(b)
-
-                item.seqLeft = a
-                item.seqKey = query.querySeq
-                item.seqRight = b
-            });
-
-            props.removeMatches(response.data.data[0].id)
-            props.addMatches(response.data.data)
+                }
+                props.removeMatches(query.id)
+                props.addMatches([obj])
+            }
         })
     };
 

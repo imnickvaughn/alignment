@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import styles from '../styles/home.module.css'
 import FaviconComponent from "./favicon.component";
 import HeaderComponent from "./header.component";
 import { Button, TextField } from "@material-ui/core";
@@ -12,8 +11,6 @@ export default function SeqListPage() {
 
     const title = "Sequence Editor";
 
-    const matchesNonAtcg = new RegExp("/[^ACTGactg]/");
-
     const { register, handleSubmit } = useForm();
 
     const onSubmit = (data) => {
@@ -23,6 +20,7 @@ export default function SeqListPage() {
             ref: sanitizeHtml(data.ref),
         }
 
+        // axios.post("http://127.0.0.1:8000/dnalookupapp/sequence/create", {
         axios.post("http://18.222.204.26/dnalookupapp/sequence/create", {
             seq: newData.seq,
             name: newData.name,
@@ -67,6 +65,7 @@ export default function SeqListPage() {
                             rows={8}
                             defaultValue=""
                             className="max-width"
+
                         />
 
                         <Button

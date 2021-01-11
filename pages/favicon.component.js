@@ -1,5 +1,4 @@
 import { useMediaQuery } from "@material-ui/core";
-import { loadGetInitialProps } from "next/dist/next-server/lib/utils";
 import Head from "next/head";
 import React from "react";
 
