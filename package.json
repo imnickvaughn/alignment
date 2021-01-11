@@ -9,7 +9,8 @@
         "build": "next build",
         "start": "next start",
         "predeploy": "npm run build",
-        "deploy": "gh-pages -b master  -d build"
+        "export": "next export",
+        "deploy": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll && echo \"nextsapien.com\" >> out/CNAME && gh-pages -d out"
     },
     "dependencies": {
         "@material-ui/core": "^4.11.2",
