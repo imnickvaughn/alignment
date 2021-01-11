@@ -27,7 +27,7 @@ export default function FormComponent(props) {
         }
         props.addMatches([query])
         // axios.post("http://127.0.0.1:8000/dnalookupapp/filter", {
-        axios.post("http://18.222.204.26/dnalookupapp/filter", {
+        axios.post("https://18.222.204.26/dnalookupapp/filter", {
             id: uid,
             code: query.querySeq,
             queryName: query.queryName
