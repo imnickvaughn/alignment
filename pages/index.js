@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import Link from 'next/link';
-import FormComponent from './form.component.js';
-import HeaderComponent from './header.component.js';
-import ResultsComponent from './results.component.js';
-import FaviconComponent from './favicon.component.js';
+import FormComponent from '../components/form.component.js';
+import HeaderComponent from '../components/header.component.js';
+import ResultsComponent from '../components/results.component.js';
+import FaviconComponent from '../components/favicon.component.js';
 
 // This is the main orchestration component and thus delegates application data
 export default function Home(props) {

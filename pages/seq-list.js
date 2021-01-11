@@ -4,8 +4,8 @@ import Link from "next/link";
 import sanitizeHtml from "sanitize-html";
 import { useForm } from "react-hook-form";
 import { Button, TextField } from "@material-ui/core";
-import FaviconComponent from "./favicon.component";
-import HeaderComponent from "./header.component";
+import FaviconComponent from "../components/favicon.component";
+import HeaderComponent from "../components/header.component";
 
 // Decided to add a GUI for adding database entries to make testing a little faster and explore Next.js routing.
 export default function SeqListPage() {
