@@ -1,17 +1,12 @@
-import { useMediaQuery } from "@material-ui/core";
-import Head from "next/head";
 import React from "react";
+import Head from "next/head";
+import { useMediaQuery } from "@material-ui/core";
 
 export default function FaviconComponent(props) {
     const matchesMediaDark = useMediaQuery('(prefers-color-scheme: dark)');
 
     const favIconDisplay = () => {
-        if (matchesMediaDark) {
-            return <link rel="icon" href="/faviconDarkBrowser.svg" />
-        }
-        else {
-            return <link rel="icon" href="/faviconLightBrowser.svg" />
-        }
+        matchesMediaDark ? <link rel="icon" href="/faviconDarkBrowser.svg" /> : <link rel="icon" href="/faviconLightBrowser.svg" />
     }
 
     return (

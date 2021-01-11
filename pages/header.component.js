@@ -1,7 +1,8 @@
-import styles from '../styles/header.module.css'
 import React from 'react';
+import styles from '../styles/header.module.css'
 import { useRouter } from 'next/router'
 
+// This component brings together and positions all the assets so that they are completely responsive.
 export default function HeaderComponent() {
 
     const router = useRouter();

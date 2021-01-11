@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+The client is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and hosted on [Vercel](https://vercel.com/).
+
+The server is a [Django](https://www.djangoproject.com/) and db is [SQLite](https://www.sqlite.org/) is a hosted on an [AWS EC2 Instance](https://aws.amazon.com/ec2/).
 
 ## Single Command for Development
 
@@ -6,36 +8,29 @@ Run this command in the project root to serve the client and the server locally:
 
 - concurrently "yarn devServer" "yarn devClient"
 
-## Getting Started
+## Getting Started with Client
 
 To install all packages for the client please run in project root:
 
 - yarn
 
+## Getting Started with Server
+
 To install all packages for the server please run in root/server:
 
 - pip install -r requirements.txt
 
+## Dev Client
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the client result.
+Open [Live Client](http://localhost:3000) with your browser to see the server result.
+## Dev Server
 
 Open [http://localhost:8000](http://localhost:8000) with your browser to see the server result.
 
-## Learn More
+## Live Client
 
+[Live Client](https://molecular-alignment.vercel.app/)
 
+## Live Server
 
-
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[Live Server](http://18.222.204.26)

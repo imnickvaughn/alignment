@@ -1,21 +1,28 @@
-import styles from '../styles/form.module.css'
 import React from "react";
-import { Button, TextField } from "@material-ui/core";
-import { useForm } from "react-hook-form";
 import axios from "axios"
+import styles from '../styles/form.module.css'
+import { useForm } from "react-hook-form";
+import { Button, TextField } from "@material-ui/core";
 import { v4 as uuidv4 } from 'uuid'
+import sanitizeHtml from "sanitize-html";
 
 
 export default function FormComponent(props) {
     let query = {};
     const { register, handleSubmit } = useForm();
 
+    // When user submits the query form
+    // we add a unique id to track the information and a status prop to allow us to indicate loading status.
+    // When the response comes back we change the status to loaded and
+    // process the sequence to give context before and after the query sequence.
+    // Functions that add and remove matches from app state are provided by the Parent component which
+    // also stores this information to the results list.
     const onSubmit = (data) => {
         let uid = uuidv4()
         query = {
             id: uid,
-            queryName: data.queryName,
-            querySeq: data.querySeq.toUpperCase(),
+            queryName: sanitizeHtml(data.queryName),
+            querySeq: sanitizeHtml(data.querySeq.toUpperCase()),
             status: 1
         }
         props.addMatches([query])
@@ -63,6 +70,7 @@ export default function FormComponent(props) {
         })
     };
 
+    // This is where the user enters the information to execute an ungapped BLAST.
     return (
         <>
             <form onSubmit={handleSubmit(onSubmit)} className="columnContainer">
